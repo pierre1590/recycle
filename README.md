@@ -1,2 +1,2 @@
-## Recycle project
+# Recycle project
 
