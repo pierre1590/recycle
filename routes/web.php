@@ -18,9 +18,12 @@ Route::view('/', 'pages.home')->name('home');
 
 //Resource Calendar
 Route::get('/calendar',[WeekController::class, 'index'])->name('calendar.index');
-Route::get('/calendar', [WeekController::class,'show'])->name('calendar.show');
-Route::get('/calendar/create', [WeekController::class, 'create'])->name('calendar.create');
-Route::post('/calendar',[WeekController::class, 'store'])->name('calendar.store');
+Route::get('/calendar/create', [WeekController::class, 'create'])->name('calendar.create'); 
+Route::post('/calendar', [WeekController::class, 'store'])->name('calendar.store'); 
+Route::get('/calendar/show',[WeekController::class, 'show'])->name('calendar.show');
+Route::get('/calendar/edit',[WeekController::class, 'edit'])->name('calendar.edit');
+Route::patch('/calendar/update',[WeekController::class, 'update'])->name('calendar.update');
+Route::delete('/calendar',[WeekController::class, 'destroy'])->name('calendar.destroy'); 
 
 //Resource Today
-Route::get('/today', [TodayController::class,'show'])->name('today.show');
+Route::get('today', [TodayController::class,'show'])->name('today.show');

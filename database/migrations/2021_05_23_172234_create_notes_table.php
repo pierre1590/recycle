@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDaysTable extends Migration
+class CreateNotesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,13 @@ class CreateDaysTable extends Migration
      */
     public function up()
     {
-        Schema::create('days', function (Blueprint $table) {
-            $table->id();
-            $table->string('Giorno');
+        Schema::create('notes', function (Blueprint $table) {
+            $table->increments('id')->start_from(1);
+            $table->string('giorno');
+            $table->string('tipologia');
+            $table->string('giorno_raccolta');
+            $table->time('ora_inizio');
+            $table->time('ora_fine');
             $table->timestamps();
         });
     }
@@ -27,6 +31,6 @@ class CreateDaysTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('days');
+        Schema::dropIfExists('notes');
     }
 }

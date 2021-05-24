@@ -2,18 +2,17 @@
 
 namespace App\Models;
 
-use App\Models\Days;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Week extends Model
+
+
+
+class note extends Model
 {
-    public function days(){
-        return $this->belongsTo(Days::class);
-    }
-    
-    
-    
-    
     use HasFactory;
+
+    protected $fillable = [];
+    protected $guarded = ['id'];
+    
 }

@@ -15,16 +15,18 @@
     </div>
    
 
-      
+    @foreach ($notes as $note )
+        
+     
         <div class="card text-center mt-5 " style="width: 20rem; left:8rem">
           <div class="card-header">
-           
+            <h2>{{$note->giorno}}</h2>
           </div>
           <div class="card-body">
-            <h5 class="card-title">Tipologia: </h5>
-            <p class="card-text">Giorno di raccolta: </p>
-            <p class="card-text">Ora Inizio: </p>
-            <p class="card-text">Ora fine: </p>
+            <h3 class="card-title"> {{ $note->tipologia }} </h3>
+            <p class="card-text">Giorno di raccolta: {{ $note->giorno_raccolta }} </p>
+            <p class="card-text">Ora Inizio: {{ $note->ora_inizio }}</p>
+            <p class="card-text">Ora fine:  {{ $note->ora_fine }}</p>
             
           </div>
           <div class="card-footer text-muted">
@@ -43,6 +45,7 @@
                 </button>
             </form>
           </div>
+    @endforeach
           <style>
             .btn-link{
               border: none;
@@ -57,5 +60,4 @@
             }
           </style>
         
-              
-@endsection
+ @endsection             
