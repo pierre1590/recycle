@@ -18,7 +18,7 @@
     @foreach ($notes as $note )
         
      
-        <div class="card text-center mt-5 " style="width: 20rem; left:8rem">
+        <div class="card text-center mt-5" style="width: 18rem; left:8rem">
           <div class="card-header">
             <h2>{{$note->giorno}}</h2>
           </div>

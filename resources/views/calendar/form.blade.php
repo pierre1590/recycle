@@ -2,13 +2,13 @@
   <label class="input-group-text" for="inputGroupSelect01">Giorno</label>
   <select name="giorno" class="form-select" id="inputGroupSelect01">
    <option selected value="">Seleziona un giorno</option>
-   <option value="lunedi">Lunedì</option>
-   <option value="martedi">Martedì</option>
-   <option value="mercoledì">Mercoledì</option>
-   <option value="giovedi">Giovedì</option>
-   <option value="venerdi">Venerdi</option>
-   <option value="sabato">Sabato</option>
-   <option value="domenica">Domenica</option>
+   <option value="Lunedi">Lunedì</option>
+   <option value="Martedi">Martedì</option>
+   <option value="Mercoledì">Mercoledì</option>
+   <option value="Giovedi">Giovedì</option>
+   <option value="Venerdi">Venerdi</option>
+   <option value="Sabato">Sabato</option>
+   <option value="Domenica">Domenica</option>
   </select>
 </div>
 <div class="input-group mb-3">
@@ -26,13 +26,13 @@
   <label class="input-group-text" for="inputGroupSelect01">Giorno raccolta</label>
   <select name="giorno_raccolta" class="form-select" id="inputGroupSelect01">
     <option selected value="">Seleziona un giorno</option>
-    <option value="lunedi">Lunedì</option>
-   <option value="martedi">Martedì</option>
-   <option value="mercoledì">Mercoledì</option>
-   <option value="giovedi">Giovedì</option>
-   <option value="venerdi">Venerdi</option>
-   <option value="sabato">Sabato</option>
-   <option value="domenica">Domenica</option>
+    <option value="Lunedi">Lunedì</option>
+    <option value="Martedi">Martedì</option>
+    <option value="Mercoledì">Mercoledì</option>
+    <option value="Giovedi">Giovedì</option>
+    <option value="Venerdi">Venerdi</option>
+    <option value="Sabato">Sabato</option>
+    <option value="Domenica">Domenica</option>
   </select>
 </div>
 <div class="input-group mb-3">
