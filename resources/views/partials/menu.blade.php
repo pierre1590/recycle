@@ -5,7 +5,7 @@
       </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link {{Route::currentRouteName() == 'calendar.show' ? 'active' : ''}}" aria-current="page" href="{{route('calendar.show')}}"> 
+        <a class="nav-link {{Route::currentRouteName() == 'calendar.index' ? 'active' : ''}}" aria-current="page" href="{{route('calendar.index')}}"> 
           Calendario
         </a>
       </li>

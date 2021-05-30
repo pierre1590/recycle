@@ -4,24 +4,18 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Day;
-use App\Models\Category;
+use App\Model\Day;
 
-
-
-class note extends Model
+class Category extends Model
 {
-    use HasFactory;
-
     protected $fillable = [];
     protected $guarded = [];
     
+    use HasFactory;
+
 
     public function days(){
-        return $this->hasOne(Day::class);
+        return $this->hasMany(Day::class);
     }
 
-    public function category(){
-        return $this->belongsTo(Category::class);
-    }
 }

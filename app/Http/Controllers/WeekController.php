@@ -2,41 +2,45 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\Category;
 use App\Models\note;
+use App\Models\Day;
+
 use Illuminate\Http\Request;
-use Carbon\Carbon;
-use Illuminate\Support\Facades\DB;
+
 
 
 class WeekController extends Controller
 {
     public function index(){
-        
-       
         $notes = note::all();
+
+        return view('calendar.index',
+        compact('notes'));
        
-        
-        return view(
-            'calendar.index',
-            compact('notes'));
     }
 
     public function create(){
-        
-        
+       
+        $categories = Category::all();
+        $days = Day::all();
         $note = new note();
-        return view(
-            'calendar.create',
-            compact('note'));
-    }
-
-
-    public function store(){
         
-        note::create($this->validateRequest());
-        return redirect()->route('calendar.index'); 
+
+        return view('calendar.create',
+        compact('categories', 'note', 'days'));
     }
+    
+    
+    public function store(){
+            
+            note::create($this->validateRequest());
+            return redirect()->route('calendar.index');
+    }
+    
+
+
+    
 
 
     public function show(note $note){
@@ -46,8 +50,8 @@ class WeekController extends Controller
 
 
     public function edit(note $note){
-        $note = note::all();
-        return view('calendar.edit',compact('note'));
+        $days = Day::all();
+        return view('calendar.edit',compact('note','days'));
     }
     
 
@@ -68,12 +72,14 @@ class WeekController extends Controller
 
     private function validateRequest(){
         return request()->validate([
-            'giorno' => 'required|unique:notes',
-            'tipologia' => 'required',
-            'giorno_raccolta' => 'required',
+            'giorno_id' => 'required|unique:notes',
+            'tipologia_id' => 'required',
+            'giorno_raccolta_id' => 'required',
             'ora_inizio' => 'required',
             'ora_fine' => 'required'
         ]);
     }
+
+    
 
 }
