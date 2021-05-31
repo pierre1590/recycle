@@ -18,7 +18,7 @@ class note extends Model
     
 
     public function days(){
-        return $this->hasOne(Day::class);
+        return $this->hasOne(Day::class,'id');
     }
 
     public function category(){

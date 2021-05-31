@@ -43,9 +43,9 @@ class WeekController extends Controller
     
 
 
-    public function show(note $note){
-        $note = note::find($note)->first();
-        return view('calendar.show',compact('note'));
+    public function show(note $notes){
+        $notes = note::find($notes)->first();
+        return view('calendar.show',compact('notes'));
     }
 
 

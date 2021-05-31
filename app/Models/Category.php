@@ -15,7 +15,9 @@ class Category extends Model
 
 
     public function days(){
-        return $this->hasMany(Day::class);
+        return $this->hasOne(Day::class);
     }
 
+
+   
 }
