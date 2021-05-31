@@ -18,8 +18,8 @@ class Day extends Model
     
     
 
-    public function categories(){
-        return $this->hasMany(Category::class);
+    public function category(){
+        return $this->hasOne(Category::class);
     }
    
 

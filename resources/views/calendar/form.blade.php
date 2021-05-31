@@ -1,6 +1,6 @@
 <div class="input-group mb-3">
   <label class="input-group-text" for="inputGroupSelect01">Giorno</label>
-  <select name="giorno" class="form-select" id="inputGroupSelect01">
+  <select name="giorno_id" class="form-select" id="inputGroupSelect01">
    @foreach ($days as $day)
         <option value="{{$day->id}}" {{$note->giorno_id == $day->id ? 'selected' : ''}} >{{$day->giorno}}</option>
       @endforeach

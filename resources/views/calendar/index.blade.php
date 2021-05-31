@@ -21,15 +21,33 @@
     <div class="d-flex flex-row bd-highlight mb-3 mt-4">
       @foreach ($notes as $n )
       <div class="p-1 bd-highlight">
-        <div class="card text-center text-dark " style="width: 18.5rem; left:3rem; top:8rem">
+        <div class="card text-center text-dark " style="width:16rem; left:6rem; top:12rem">
           <div class="card-header">
-            <h2>{{$n->giorno}}</h2>
+            <h2>{{$n->giorno_id }}</h2>
           </div>
           <div class="card-body">
-            <h3 class="card-title">Tipologia rifiuto: {{ $n->tipologia}} </h3>
-            <p class="card-text">Giorno di raccolta: {{ $n->giorno_id }} </p>
+            <h3 class="card-title">Tipologia rifiuto: {{ $n->tipologia_id}} </h3>
+            <p class="card-text">Giorno di raccolta: {{ $n->giorno_raccolta_id }} </p>
             <p class="card-text">Ora Inizio: {{ $n->ora_inizio }}</p>
             <p class="card-text">Ora fine:  {{ $n->ora_fine }}</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">
+              <a href="{{route('calendar.edit',$n->id)}}">
+                <span class="material-icons">
+                  edit
+                </span>
+              </a>
+              <form class="delete" action="/calendar/{{$n->id}}" method="POST">
+                @method('DELETE')
+                @csrf
+                <button type="submit" class="btn-link">
+                  <span class="material-icons">
+                    delete
+                  </span>
+                </button>
+            </form>
+            </small>
           </div>
         </div>
       </div>

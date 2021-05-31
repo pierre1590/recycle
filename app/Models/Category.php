@@ -4,7 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Model\Day;
+use App\Model\note;
+use App\Models\Day;
 
 class Category extends Model
 {
@@ -13,6 +14,10 @@ class Category extends Model
     
     use HasFactory;
 
+
+    public function notes(){
+        return $this->hasOne(note::class);
+    }
 
     public function days(){
         return $this->hasOne(Day::class);

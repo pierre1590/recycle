@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\note;
 use App\Models\Day;
+use Illuminate\Support\Facades\DB;
+
 
 use Illuminate\Http\Request;
 
@@ -13,7 +15,9 @@ use Illuminate\Http\Request;
 class WeekController extends Controller
 {
     public function index(){
-        $notes = note::all();
+        $notes = DB::table('notes')
+        ->orderBy('giorno_id','asc')
+        ->get();
 
         return view('calendar.index',
         compact('notes'));

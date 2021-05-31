@@ -18,10 +18,10 @@ class note extends Model
     
 
     public function days(){
-        return $this->hasOne(Day::class,'id');
+        return $this->hasOne(Day::class);
     }
 
     public function category(){
-        return $this->belongsTo(Category::class);
+        return $this->hasOne(Category::class);
     }
 }
