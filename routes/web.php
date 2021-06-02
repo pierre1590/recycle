@@ -21,9 +21,9 @@ Route::get('/calendar',[WeekController::class, 'index'])->name('calendar.index')
 Route::get('/calendar/create', [WeekController::class, 'create'])->name('calendar.create'); 
 Route::post('/calendar',[WeekController::class,'store'])->name('calendar.store');
 Route::get('/calendar/show',[WeekController::class, 'show'])->name('calendar.show');
-Route::get('/calendar/edit',[WeekController::class, 'edit'])->name('calendar.edit');
-Route::patch('/calendar/update',[WeekController::class, 'update'])->name('calendar.update');
-Route::delete('/calendar/delete',[WeekController::class, 'destroy'])->name('calendar.destroy'); 
-Route::delete('/calendar/deleteAll', [WeekController::class, 'destroyAll'])->name('calendar.deleteAll');
+Route::get('/calendar/{note}/edit',[WeekController::class, 'edit'])->name('calendar.edit');
+Route::patch('/calendar/{note}',[WeekController::class, 'update'])->name('calendar.update');
+Route::delete('/calendar/{note}',[WeekController::class, 'destroy'])->name('calendar.destroy'); 
+Route::delete('/calendar', [WeekController::class, 'destroyAll'])->name('calendar.destroyAll');
 //Resource Today
 Route::get('today', [TodayController::class,'show'])->name('today.show');

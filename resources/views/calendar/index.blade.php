@@ -15,40 +15,51 @@
         <a class="btn btn-outline-primary" href="{{route('calendar.create')}}">Aggiungi giorno</a>
       </div>
       <div class="col-md-6">
-       <a class="btn btn-outline-danger" href="{{route('calendar.deleteAll')}}">Cancella calendario</a>
-    </div>
+        <form action="/calendar" method="POST" class="deleteAll">
+          @method('DELETE')
+          @csrf
+              <button class="btn btn-outline-danger" type="submit" >Cancella calendario</button>
+        </form>
+      </div>
    
     <div class="d-flex flex-row bd-highlight mb-3 mt-4">
       @foreach ($notes as $n )
       <div class="p-1 bd-highlight">
         <div class="card text-center text-dark " style="width:16rem; left:6rem; top:12rem">
           <div class="card-header">
-            <h2>{{$n->giorno_id }}</h2>
+            <h2>{{$n->giorno_id}}</h2>
           </div>
           <div class="card-body">
-            <h3 class="card-title">Tipologia rifiuto: {{ $n->tipologia_id}} </h3>
+            <h3 class="card-title">{{ $n->tipologia_id}} </h3>
             <p class="card-text">Giorno di raccolta: {{ $n->giorno_raccolta_id }} </p>
             <p class="card-text">Ora Inizio: {{ $n->ora_inizio }}</p>
             <p class="card-text">Ora fine:  {{ $n->ora_fine }}</p>
           </div>
           <div class="card-footer">
-            <small class="text-muted">
-              <a href="{{route('calendar.edit',$n->id)}}">
-                <span class="material-icons">
-                  edit
-                </span>
-              </a>
-              <form class="delete" action="/calendar/{{$n->id}}" method="POST">
-                @method('DELETE')
-                @csrf
-                <button type="submit" class="btn-link">
-                  <span class="material-icons">
-                    delete
-                  </span>
-                </button>
-            </form>
-            </small>
+            
+             <div class="row align-items-start ">
+               <div class="col-md-6">
+                    <a href="{{route('calendar.edit',$n->id)}}">
+                        <span class="material-icons">
+                           edit
+                        </span>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <form class="delete" action="/calendar/{{$n->id}}" method="POST">
+                       @method('DELETE')
+                      @csrf
+                      <button type="submit" class="btn-link">
+                        <span class="material-icons">
+                            delete
+                        </span>
+                      </button>
+                    </form>
+                </div>
+            
+          </div> 
           </div>
+         
         </div>
       </div>
       @endforeach
@@ -73,4 +84,12 @@
             }
           </style>
         
- @endsection             
+ @endsection         
+  
+ @section('script_ext')
+<script>
+  $(".deleteAll").on("submit", function(){
+    return confirm("Sei sicuro di voler eliminare il calendario ?");
+  });
+</script>
+@endsection

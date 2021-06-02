@@ -15,8 +15,9 @@ use Illuminate\Http\Request;
 class WeekController extends Controller
 {
     public function index(){
+       
         $notes = DB::table('notes')
-        ->orderBy('giorno_id','asc')
+        ->orderBy('notes.giorno_id','asc')
         ->get();
 
         return view('calendar.index',
@@ -39,15 +40,15 @@ class WeekController extends Controller
     public function store(){
             
             note::create($this->validateRequest());
-            return redirect()->route('calendar.index');
+            session()->flash('message_success', 'Giorno salvato correttamente !!!');
+            return redirect()->route('calendar.show');
     }
     
 
 
     
-
-
     public function show(note $notes){
+        
         $notes = note::find($notes)->first();
         return view('calendar.show',compact('notes'));
     }
@@ -55,7 +56,8 @@ class WeekController extends Controller
 
     public function edit(note $note){
         $days = Day::all();
-        return view('calendar.edit',compact('note','days'));
+        $categories = Category::all();
+        return view('calendar.edit',compact('note','categories','days'));
     }
     
 
@@ -64,12 +66,18 @@ class WeekController extends Controller
         $note ->update($this->validateRequest());
 
 
-        return redirect()->route('calendar.show',$note->id);
+        return redirect()->route('calendar.show',$note->giorno_id);
     }
 
 
     public function destroy(note $note){
         $note->delete();
+        return redirect()->route('calendar.index');
+    }
+
+    public function destroyAll(note $note){
+     
+     $note->truncate();
         return redirect()->route('calendar.index');
     }
 
