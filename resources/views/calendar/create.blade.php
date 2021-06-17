@@ -6,7 +6,7 @@
 
 @section('content')
    
-       <h1 class="display-4">Giorni</h1>
+       <h1 class="display-4 fw-bold fst-italic text-info">Giorni</h1>
        <a class="btn btn-dark mb-3" href="{{route('calendar.index')}}">Torna indietro</a>
         <form action="/calendar" method="post">
             

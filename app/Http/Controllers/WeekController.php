@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use App\Models\note;
+use App\Models\Note;
 use App\Models\Day;
 use Illuminate\Support\Facades\DB;
 
@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
 class WeekController extends Controller
 {
     public function index(){
-       
+        
         $notes = DB::table('notes')
         ->orderBy('notes.giorno_id','asc')
         ->get();
@@ -39,7 +39,7 @@ class WeekController extends Controller
     
     public function store(){
             
-            note::create($this->validateRequest());
+            Note::create($this->validateRequest());
             session()->flash('message_success', 'Giorno salvato correttamente !!!');
             return redirect()->route('calendar.show');
     }
@@ -47,14 +47,14 @@ class WeekController extends Controller
 
 
     
-    public function show(note $notes){
+    public function show(Note $notes){
         
-        $notes = note::find($notes)->first();
+        $notes = Note::find($notes)->first();
         return view('calendar.show',compact('notes'));
     }
 
 
-    public function edit(note $note){
+    public function edit(Note $note){
         $days = Day::all();
         $categories = Category::all();
         return view('calendar.edit',compact('note','categories','days'));
@@ -62,7 +62,7 @@ class WeekController extends Controller
     
 
 
-    public function update(note $note){
+    public function update(Note $note){
         $note ->update($this->validateRequest());
 
 
@@ -70,14 +70,14 @@ class WeekController extends Controller
     }
 
 
-    public function destroy(note $note){
+    public function destroy(Note $note){
         $note->delete();
         return redirect()->route('calendar.index');
     }
 
-    public function destroyAll(note $note){
+    public function destroyAll(Note $note){
      
-     $note->truncate();
+        $note->truncate();
         return redirect()->route('calendar.index');
     }
 

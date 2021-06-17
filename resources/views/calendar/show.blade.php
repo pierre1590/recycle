@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<h1 class="display-4">Salvataggio giorno</h1>
+<h1 class="display-4 fw-bold fst-italic text-info">Salvataggio giorno</h1>
 <div class="card mb-5 mt-5">
     <h5 class="card-header text-dark">Salvataggio</h5>
         <div class="card-body">

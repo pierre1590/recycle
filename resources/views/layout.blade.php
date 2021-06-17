@@ -14,11 +14,13 @@
 <body>
 
     @include('partials.menu')
-    <div class="bg-image text-center text-white md-3" style="
+    <div class="bg-image text-center text-dark md-3" style="
     background-image: url('https://www.greenme.it/wp-content/uploads/2021/04/Earthday.jpg');
     background-size:cover;
-    background-repeat:no-repeat;
-    height:1200px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    height:1400px;
     ">
         <div class="container">
              @yield('content')

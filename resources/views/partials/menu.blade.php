@@ -1,6 +1,6 @@
 <ul class="nav nav-pills justify-content-center p-3 px-md-4 mb-3 bg-white border-bottom">
     <li class="nav-item">
-      <a class="nav-link {{Route::currentRouteName() == 'home' ? 'active' : ''}}" aria-current="page" href="{{route('home')}}"> 
+      <a class=" nav-link {{Route::currentRouteName() == 'home' ? 'active' : ''}}" aria-current="page" href="{{route('home')}} "> 
         Home
       </a>
     </li>

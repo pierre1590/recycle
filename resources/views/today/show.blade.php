@@ -7,7 +7,7 @@
 @section('content')
    <div class="row">
       <div class="col-md-12"></div>
-          <h4 class="display-2">
+          <h4 class="display-2 fw-bold fst-italic text-info">
             Today, {{strftime("%A %d %b %Y ")}}
           </h4>
       </div>

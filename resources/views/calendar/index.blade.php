@@ -7,12 +7,12 @@
 @section('content')
    <div class="row">
       <div class="col-md-12"></div>
-          <h4 class="display-4">Calendario </h4>
+          <h3 class="display-4  fw-bold fst-italic text-info">Calendario </h3>
       </div>
     </div>
     <div class="row align-items-center text-center">
       <div class="col-md-6 ">
-        <a class="btn btn-outline-primary" href="{{route('calendar.create')}}">Aggiungi giorno</a>
+        <a class="btn btn-outline-primary " href="{{route('calendar.create')}}">Aggiungi giorno</a>
       </div>
       <div class="col-md-6">
         <form action="/calendar" method="POST" class="deleteAll">
@@ -25,9 +25,10 @@
     <div class="d-flex flex-row bd-highlight mb-3 mt-4">
       @foreach ($notes as $n )
       <div class="p-1 bd-highlight">
-        <div class="card text-center text-dark " style="width:16rem; left:6rem; top:12rem">
+        <div class="card text-center text-dark " style="width:16rem; left:13rem; top:12rem">
           <div class="card-header">
-            <h2>{{$n->giorno_id}}</h2>
+            
+            <h2>{{$n->days->giorno}}</h2>
           </div>
           <div class="card-body">
             <h3 class="card-title">{{ $n->tipologia_id}} </h3>
