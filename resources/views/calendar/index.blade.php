@@ -28,7 +28,7 @@
         <div class="card text-center text-dark " style="width:16rem; left:13rem; top:12rem">
           <div class="card-header">
             
-            <h2>{{$n->days->giorno}}</h2>
+            <h2>{{$n->giorno_id}}</h2>
           </div>
           <div class="card-body">
             <h3 class="card-title">{{ $n->tipologia_id}} </h3>
