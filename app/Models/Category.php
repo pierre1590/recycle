@@ -19,8 +19,8 @@ class Category extends Model
         return $this->hasOne(Note::class);
     }
 
-    public function days(){
-        return $this->belongsTo(Day::class);
+    public function day(){
+        return $this->hasOne(Day::class);
     }
 
 

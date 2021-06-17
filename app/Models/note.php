@@ -9,7 +9,7 @@ use App\Models\Category;
 
 
 
-class note extends Model
+class Note extends Model
 {
     use HasFactory;
 
@@ -17,7 +17,7 @@ class note extends Model
     protected $guarded = [];
     
 
-    public function days(){
+    public function day(){
         return $this->hasOne(Day::class);
     }
 

@@ -17,7 +17,7 @@ class WeekController extends Controller
     public function index(){
         
         $notes = DB::table('notes')
-        ->orderBy('notes.giorno_id','asc')
+        ->orderBy('notes.day_id','asc')
         ->get();
 
         return view('calendar.index',
@@ -84,8 +84,8 @@ class WeekController extends Controller
 
     private function validateRequest(){
         return request()->validate([
-            'giorno_id' => 'required|unique:notes',
-            'tipologia_id' => 'required',
+            'day_id' => 'required|unique:notes',
+            'category_id' => 'required',
             'giorno_raccolta_id' => 'required',
             'ora_inizio' => 'required',
             'ora_fine' => 'required'

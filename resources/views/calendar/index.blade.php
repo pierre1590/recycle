@@ -28,11 +28,11 @@
         <div class="card text-center text-dark " style="width:16rem; left:13rem; top:12rem">
           <div class="card-header">
             
-            <h2>{{$n->giorno_id}}</h2>
+            <h2>{{$n->day->name}}</h2>
           </div>
           <div class="card-body">
-            <h3 class="card-title">{{ $n->tipologia_id}} </h3>
-            <p class="card-text">Giorno di raccolta: {{ $n->giorno_raccolta_id }} </p>
+            <h3 class="card-title">{{ $n->category->name}} </h3>
+            <p class="card-text">Giorno di raccolta: {{ $n->day->name }} </p>
             <p class="card-text">Ora Inizio: {{ $n->ora_inizio }}</p>
             <p class="card-text">Ora fine:  {{ $n->ora_fine }}</p>
           </div>
