@@ -25,7 +25,7 @@
     <div class="d-flex flex-row bd-highlight mb-3 mt-4">
       @foreach ($notes as $n )
       <div class="p-1 bd-highlight">
-        <div class="card text-center text-dark " style="width:16rem; left:13rem; top:12rem">
+        <div class="card text-center text-dark " style="width:16rem; left:5rem; top:12rem">
           <div class="card-header">
             
             <h2>{{$n->day->name}}</h2>

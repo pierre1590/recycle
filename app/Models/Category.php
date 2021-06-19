@@ -15,8 +15,8 @@ class Category extends Model
     use HasFactory;
 
 
-    public function notes(){
-        return $this->hasOne(Note::class);
+    public function note(){
+        return $this->hasMany(Note::class);
     }
 
     public function day(){

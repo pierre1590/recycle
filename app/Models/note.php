@@ -15,13 +15,13 @@ class Note extends Model
 
     protected $fillable = [];
     protected $guarded = [];
-    
+    protected $primaryKey = 'id';
 
     public function day(){
         return $this->hasOne(Day::class);
     }
 
     public function category(){
-        return $this->hasOne(Category::class);
+        return $this->belongsTo(Category::class);
     }
 }

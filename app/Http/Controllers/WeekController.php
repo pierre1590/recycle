@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Note;
 use App\Models\Day;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Collection;
 
 
 use Illuminate\Http\Request;
@@ -16,9 +16,9 @@ class WeekController extends Controller
 {
     public function index(){
         
-        $notes = DB::table('notes')
-        ->orderBy('notes.day_id','asc')
-        ->get();
+        $notes = Note::all()
+           ->sortBy('day_id');
+          
 
         return view('calendar.index',
         compact('notes'));
@@ -29,7 +29,7 @@ class WeekController extends Controller
        
         $categories = Category::all();
         $days = Day::all();
-        $note = new note();
+       $note = new Note();
         
 
         return view('calendar.create',
@@ -47,17 +47,17 @@ class WeekController extends Controller
 
 
     
-    public function show(Note $notes){
+    public function show(Note $note){
         
-        $notes = Note::find($notes)->first();
-        return view('calendar.show',compact('notes'));
+        $note = Note::find($note)->first();
+        return view('calendar.show',compact('note'));
     }
 
 
     public function edit(Note $note){
-        $days = Day::all();
+      
         $categories = Category::all();
-        return view('calendar.edit',compact('note','categories','days'));
+        return view('calendar.edit',compact('note','categories'));
     }
     
 
@@ -66,7 +66,7 @@ class WeekController extends Controller
         $note ->update($this->validateRequest());
 
 
-        return redirect()->route('calendar.show',$note->giorno_id);
+        return redirect()->route('calendar.show',$note->day_id);
     }
 
 

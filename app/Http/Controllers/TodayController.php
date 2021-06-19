@@ -17,6 +17,15 @@ class TodayController extends Controller
       ]);
     }
 
+    public function showToday()
+    {
+      $currentDate = Carbon::now();
+      if($currentDate = 'day'){
     
+        
+      }
+      else
+       echo "Nothing to recycle.";
+    }
    
 }
