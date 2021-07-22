@@ -19,11 +19,11 @@ class Day extends Model
     
 
     public function category(){
-        return $this->hasOne(Category::class);
+        return $this->belongsTo(Category::class);
     }
    
 
     public function note(){
-        return $this->hasOne(Note::class);
+        return $this->belongsTo(Note::class);
     }
 }

@@ -18,7 +18,7 @@ class Note extends Model
     protected $primaryKey = 'id';
 
     public function day(){
-        return $this->hasOne(Day::class);
+        return $this->belongsTo(Day::class);
     }
 
     public function category(){

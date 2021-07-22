@@ -10,7 +10,7 @@
         <form action="/calendar/{{$note->id}}" method="POST">
             <a class="btn btn-dark mb-3" href="{{route('calendar.index')}}">Torna indietro</a>
             <div class="card mb-5 text-dark ">
-                <h5 class="card-header">Modifica giorno #ID : {{$note->giorno_id}}</h5>
+                <h5 class="card-header">Modifica giorno : {{$note->day->name}}</h5>
                     <div class="card-body">
                             @method('PATCH')
                             @include('calendar.form')

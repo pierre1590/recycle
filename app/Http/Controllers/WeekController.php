@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Note;
 use App\Models\Day;
 use Illuminate\Support\Collection;
+use Illuminate\Database\Eloquent\Builder;
 
 
 use Illuminate\Http\Request;
@@ -16,8 +17,9 @@ class WeekController extends Controller
 {
     public function index(){
         
-        $notes = Note::all()
-           ->sortBy('day_id');
+        $notes = Note::with('day')
+           ->orderBy('day_id')
+           ->get();
           
 
         return view('calendar.index',
@@ -48,23 +50,25 @@ class WeekController extends Controller
 
     
     public function show(Note $note){
-        
+       
+       
         $note = Note::find($note)->first();
         return view('calendar.show',compact('note'));
     }
 
 
     public function edit(Note $note){
-      
+        $days = Day::all();
         $categories = Category::all();
-        return view('calendar.edit',compact('note','categories'));
+        return view('calendar.edit',compact('note','categories','days'));
     }
     
 
 
     public function update(Note $note){
-        $note ->update($this->validateRequest());
+        $note ->update($this->validateRequest1());
 
+        session()->flash('message_success', 'Giorno salvato correttamente !!!');
 
         return redirect()->route('calendar.show',$note->day_id);
     }
@@ -92,6 +96,15 @@ class WeekController extends Controller
         ]);
     }
 
+    private function validateRequest1(){
+        return request()->validate([
+            
+            'category_id' => 'required',
+            'giorno_raccolta_id' => 'required',
+            'ora_inizio' => 'required',
+            'ora_fine' => 'required'
+        ]);
+    }
     
 
 }

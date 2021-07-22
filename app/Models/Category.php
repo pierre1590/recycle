@@ -16,11 +16,11 @@ class Category extends Model
 
 
     public function note(){
-        return $this->hasMany(Note::class);
+        return $this->belongsTo(Note::class);
     }
 
     public function day(){
-        return $this->hasOne(Day::class);
+        return $this->belongsTo(Day::class);
     }
 
 
