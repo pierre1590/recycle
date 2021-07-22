@@ -4,4 +4,4 @@
 
 L'applicazione permette di creare un calendario settimanale per la raccolta differenziata.
 ## Framework utilizzato
-# -Laravel
+### -Laravel
