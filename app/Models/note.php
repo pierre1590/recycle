@@ -27,7 +27,7 @@ class Note extends Model
     }
 
     public function collection(){
-        return $this->belongsTo(Collection_day::class);
+        return $this->belongsTo(Collection_day::class, 'giorno_raccolta_id');
     }
    
 }
