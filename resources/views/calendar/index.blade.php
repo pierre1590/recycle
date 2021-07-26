@@ -32,7 +32,7 @@
           </div>
           <div class="card-body">
             <h3 class="card-title">{{ $n->category->name}} </h3>
-            <p class="card-text">Giorno di raccolta: {{ $n->giorno_raccolta_id}} </p>
+            <p class="card-text">Giorno di raccolta: {{ $n}} </p>
             <p class="card-text">Ora Inizio: {{ $n->ora_inizio }}</p>
             <p class="card-text">Ora fine:  {{ $n->ora_fine }}</p>
           </div>

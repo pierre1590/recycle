@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Model\Note;
 use App\Models\Day;
 
+
 class Category extends Model
 {
     protected $fillable = [];
@@ -23,6 +24,6 @@ class Category extends Model
         return $this->belongsTo(Day::class);
     }
 
-
+   
    
 }

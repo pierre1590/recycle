@@ -2,7 +2,7 @@
   <label class="input-group-text" for="inputGroupSelect01">Giorno</label>
   <select name="day_id" class="form-select" id="inputGroupSelect01">
    @foreach ($days as $day)
-        <option value="{{$day->id}}" {{$note->day_id == $day->id ? 'selected' : ''}} >{{$day->name}}</option>
+        <option value="{{$day->id}}" {{$note->day_id == $day->id ? 'selected' : ' '}} >{{$day->name}}</option>
       @endforeach
   </select>
 </div>
@@ -17,7 +17,7 @@
   <label class="input-group-text" for="inputGroupSelect01">Tipologia</label>
   <select name="category_id" class="form-select" id="inputGroupSelect01">
     @foreach ($categories as $c)
-        <option value="{{$c->id}}" {{$note->category_id == $c->id ? 'selected' : ''}} >{{$c->name}}</option>
+        <option value="{{$c->id}}" {{$note->category_id == $c->id ? 'selected' : ' '}} >{{$c->name}}</option>
       @endforeach
   </select>
 </div>
@@ -31,8 +31,8 @@
 <div class="input-group mb-3">
   <label class="input-group-text" for="inputGroupSelect01">Giorno raccolta</label>
   <select name="giorno_raccolta_id" class="form-select" id="inputGroupSelect01">
-    @foreach ($days as $day)
-        <option value="{{$day->id}}" {{$note->giorno_raccolta_id == $day->id ? 'selected' : ''}} >{{$day->name}}</option>
+    @foreach ($collections as $collection)
+        <option value="{{$collection->id}}" {{$note->giorno_raccolta_id == $collection->id ? 'selected' : ' '}} >{{$collection->name}}</option>
       @endforeach
   </select>
 </div>

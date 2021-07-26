@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Note;
 use App\Models\Day;
+use App\Models\Collection_day;
 use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\Builder;
 
@@ -15,27 +16,30 @@ use Illuminate\Http\Request;
 
 class WeekController extends Controller
 {
+
+    
+
     public function index(){
         
-        $notes = Note::with('day')
-           ->orderBy('day_id')
+         $notes = Note::with('day')
+           ->orderBy('day_id','asc')
            ->get();
           
 
         return view('calendar.index',
         compact('notes'));
-       
+    
     }
 
     public function create(){
-       
+        $collections = Collection_day::all();
         $categories = Category::all();
         $days = Day::all();
-       $note = new Note();
+        $note = new Note();
         
 
         return view('calendar.create',
-        compact('categories', 'note', 'days'));
+        compact('categories', 'note', 'days','collections'));
     }
     
     
@@ -58,9 +62,10 @@ class WeekController extends Controller
 
 
     public function edit(Note $note){
+        $collections = Collection_day::all();
         $days = Day::all();
         $categories = Category::all();
-        return view('calendar.edit',compact('note','categories','days'));
+        return view('calendar.edit',compact('note','categories','days','collections'));
     }
     
 
@@ -98,7 +103,7 @@ class WeekController extends Controller
 
     private function validateRequest1(){
         return request()->validate([
-            
+            'day_id' => 'required',
             'category_id' => 'required',
             'giorno_raccolta_id' => 'required',
             'ora_inizio' => 'required',
