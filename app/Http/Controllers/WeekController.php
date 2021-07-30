@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Note;
 use App\Models\Day;
-use App\Models\Collection_day;
+
 use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\Builder;
 
@@ -32,14 +32,14 @@ class WeekController extends Controller
     }
 
     public function create(){
-        $collections = Collection_day::all();
+       
         $categories = Category::all();
         $days = Day::all();
         $note = new Note();
         
 
         return view('calendar.create',
-        compact('categories', 'note', 'days','collections'));
+        compact('categories', 'note', 'days'));
     }
     
     
@@ -62,10 +62,10 @@ class WeekController extends Controller
 
 
     public function edit(Note $note){
-        $collections = Collection_day::all();
+       
         $days = Day::all();
         $categories = Category::all();
-        return view('calendar.edit',compact('note','categories','days','collections'));
+        return view('calendar.edit',compact('note','categories','days'));
     }
     
 

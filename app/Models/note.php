@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Day;
 use App\Models\Category;
-use App\Models\Collection_day;
+
 
 
 
@@ -27,7 +27,7 @@ class Note extends Model
     }
 
     public function collection(){
-        return $this->belongsTo(Collection_day::class, 'giorno_raccolta_id');
+        return $this->belongsTo(Day::class, 'giorno_raccolta_id');
     }
    
 }

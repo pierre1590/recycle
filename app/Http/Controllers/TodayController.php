@@ -1,31 +1,24 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Category;
+use App\Models\Day;
+use App\Models\Note;
 
-use App\Models\note;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
+
 
 class TodayController extends Controller
 {
-    public function show()
+    public function show(Note $notes)
     {
-      $currentDate = date("Y-m-d");
-  
-      return view("today.show", [
-        "notes" => note::where("giorno", "=", $currentDate)
-      ]);
+      $currentDate = Carbon::now()->locale('it_IT')->timezone('Europe/Rome');
+      $categories = Category::all();
+      $day = Day::where('name', $currentDate->dayName)->first();
+      $notes = Note::where('day_id', $day->id)->get();  
+      return view('today.show',compact('currentDate','notes','day'));
     }
 
-    public function showToday()
-    {
-      $currentDate = Carbon::now();
-      if($currentDate = 'day'){
     
         
-      }
-      else
-       echo "Nothing to recycle.";
-    }
-   
 }

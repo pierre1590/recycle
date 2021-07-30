@@ -31,8 +31,8 @@
 <div class="input-group mb-3">
   <label class="input-group-text" for="inputGroupSelect01">Giorno raccolta</label>
   <select name="giorno_raccolta_id" class="form-select" id="inputGroupSelect01">
-    @foreach ($collections as $collection)
-        <option value="{{$collection->id}}" {{$note->giorno_raccolta_id == $collection->id ? 'selected' : ' '}} >{{$collection->name}}</option>
+    @foreach ($days as $d)
+        <option value="{{$d->id}}" {{$note->giorno_raccolta_id == $d->id ? 'selected' : ' '}} >{{$d->name}}</option>
       @endforeach
   </select>
 </div>
