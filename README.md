@@ -26,8 +26,10 @@
 
 # Home page
 <img src="https://i.ibb.co/6rcfR9v/home.jpg" alt="home" >
+
 # Calendar 
 <img src="https://i.ibb.co/GkxS30k/calendar03.jpg" alt="calendar03">
+
 # Today
 <img src="https://i.ibb.co/tJsJJhB/today1.jpg" alt="today1" >
 
