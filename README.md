@@ -67,6 +67,6 @@ This is an example of how to list things you need to use the software and how to
    <!-- CONTACT -->
 ## Contact
 
-Piero Sabino - [@SabinoPiero](https://twitter.com/SabinoPiero) - email@example.com
+Piero Sabino - [@SabinoPiero](https://twitter.com/SabinoPiero) - piero.sa@icloud.com
 
 Project Link: [https://github.com/pierre1590/recycle](https://github.com/pierre1590/recycle)
