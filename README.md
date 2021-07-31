@@ -34,6 +34,7 @@ It allows both a weekly and a daily view.
 - HTML
 - PHP
 - MYSQL
+- Bootstrap
 
 ## Framework 
 - Laravel
