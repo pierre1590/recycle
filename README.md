@@ -32,7 +32,7 @@ Consente anche di avere una visione sia settimanale sia giornaliera.
 
 ### Built with
 
-### Framework utilizzato
+### Framework 
 ## - Laravel
 
 <!-- GETTING STARTED -->
