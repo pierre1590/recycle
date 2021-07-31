@@ -11,7 +11,6 @@
         <li><a href="#framework">Framework</a></li> 
       </ul>
     </li>
-    <li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
