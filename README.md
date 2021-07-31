@@ -43,7 +43,7 @@ It allows both a weekly and a daily view.
 - PHP
 - MYSQL
 
-### Framework 
+## Framework 
 
 ##  - Laravel
 
