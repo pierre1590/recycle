@@ -44,8 +44,7 @@ It allows both a weekly and a daily view.
 - MYSQL
 
 ## Framework 
-
-##  - Laravel
+- Laravel
 
 <!-- GETTING STARTED -->
 ## Getting Started
