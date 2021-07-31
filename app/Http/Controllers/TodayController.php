@@ -15,10 +15,11 @@ class TodayController extends Controller
       $currentDate = Carbon::now()->locale('it_IT')->timezone('Europe/Rome');
       $categories = Category::all();
       $day = Day::where('name', $currentDate->dayName)->first();
-      $notes = Note::where('day_id', $day->id)->get();  
-      return view('today.show',compact('currentDate','notes','day'));
+      $note = Note::where('day_id', $day->id)->get();  
+      return view('today.show',compact('currentDate','note','day'));
     }
 
+    
     
         
 }

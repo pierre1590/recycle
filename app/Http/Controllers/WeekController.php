@@ -105,6 +105,7 @@ class WeekController extends Controller
         return request()->validate([
             'day_id' => 'required',
             'category_id' => 'required',
+            
             'giorno_raccolta_id' => 'required',
             'ora_inizio' => 'required',
             'ora_fine' => 'required'

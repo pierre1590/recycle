@@ -17,6 +17,7 @@ class CreateNotesTable extends Migration
             $table->increments('id')->start_from(1);
             $table->unsignedInteger('day_id');
             $table->unsignedInteger('category_id');
+           
             $table->unsignedInteger('giorno_raccolta_id');
             $table->time('ora_inizio');
             $table->time('ora_fine');

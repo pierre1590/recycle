@@ -16,6 +16,7 @@
 <div class="input-group mb-3">
   <label class="input-group-text" for="inputGroupSelect01">Tipologia</label>
   <select name="category_id" class="form-select" id="inputGroupSelect01">
+       
     @foreach ($categories as $c)
         <option value="{{$c->id}}" {{$note->category_id == $c->id ? 'selected' : ' '}} >{{$c->name}}</option>
       @endforeach
@@ -27,6 +28,8 @@
     {{ $errors->first('category_id')}}
 </div>
 @endif
+
+
 
 <div class="input-group mb-3">
   <label class="input-group-text" for="inputGroupSelect01">Giorno raccolta</label>

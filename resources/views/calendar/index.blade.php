@@ -7,7 +7,7 @@
 @section('content')
    <div class="row">
       <div class="col-md-12"></div>
-          <h3 class="display-4  fw-bold fst-italic text-info">Calendario </h3>
+          <h3 class="display-4  fw-bold fst-italic text-primary">Calendario </h3>
       </div>
     </div>
     <div class="row align-items-center text-center">
@@ -25,12 +25,13 @@
     <div class="d-flex flex-row bd-highlight mb-3 mt-2">
       @foreach ($notes as $n )
       <div class="p-1 bd-highlight">
-        <div class="card text-center text-dark " style="width:16rem; left:12rem; top:5rem">
+        <div class="card text-primary fw-bolder text-center  border-primary " style="width:16rem; left:6rem; top:5rem">
           <div class="card-header">
             
             <h2>{{$n->day->name}}</h2>
           </div>
           <div class="card-body">
+           
             <h3 class="card-title">{{ $n->category->name}} </h3>
             <p class="card-text">Giorno di raccolta: {{ $n->collection->name}} </p>
             <p class="card-text">Ora Inizio: {{ $n->ora_inizio }}</p>
